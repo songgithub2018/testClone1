@@ -21,6 +21,7 @@ public class PaymentController {
 
     @PostMapping("/payment/insert")
     public CommonResult insert(@RequestBody Payment payment) {
+        String s="";
         int result = paymentService.insert(payment);
         if (result > 0) {
             return new CommonResult(200, "插入数据成功，服务端口：" + serverPort);
